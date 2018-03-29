@@ -54,3 +54,5 @@ C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.
 C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.Google.xml
 C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
 C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.Facebook.xml
