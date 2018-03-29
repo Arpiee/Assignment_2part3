@@ -52,3 +52,5 @@ C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\obj\Debug\Assignment
 C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\obj\Debug\Assignment 1.Tests.pdb
 C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.Google.dll
 C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\arpit\source\repos\Assignment 1\Assignment 1.Tests\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.xml
