@@ -132,7 +132,7 @@ namespace Assignment_1.Tests.Controllers
         }
         // post: Edit
         [TestMethod]
-        
+
         public void EditPostValid()
         {
             // act
@@ -155,6 +155,87 @@ namespace Assignment_1.Tests.Controllers
             Assert.AreEqual("Edit", actual.ViewName);
         }
 
+        // create
+        [TestMethod]
+        public void CreateViewLoads()
+        {
+            // act
+            var actual = (ViewResult)controller.Create();
+
+            // assert
+            Assert.AreEqual("Create", actual.ViewName);
+        }
+        [TestMethod]
+        public void CreateValid()
+        {
+            // arrange
+            chopper a = new chopper
+            {
+                Name = "New chopper"
+            };
+
+            // act
+            var actual = (RedirectToRouteResult)controller.Create(a);
+
+            // assert
+            Assert.AreEqual("Index", actual.RouteValues["action"]);
+        }
+        [TestMethod]
+        public void CreateInvalid()
+        {
+            // arrange 
+            chopper a = new chopper
+            {
+                Name = "New chopper"
+            };
+
+            controller.ModelState.AddModelError("key", "create error");
+
+            // act
+            var actual = (ViewResult)controller.Create(a);
+
+            // assert
+            Assert.AreEqual("create", actual.ViewName);
+        }
+
+        // Delete
+        [TestMethod]
+        public void DeleteGetValidId()
+        {
+            // act
+            var actual = ((ViewResult)controller.Delete(1)).Model;
+
+            // assert
+            Assert.AreEqual(choppers[0], actual);
+
+        }
+        [TestMethod]
+        public void DeleteGetInvalidId()
+        {
+            //act
+            var actual = (ViewResult)controller.Delete(4);
+
+            //assert
+            Assert.AreEqual("Error", actual.ViewName);
+        }
+        [TestMethod]
+        public void DeleteGetNoId()
+        {
+            // act
+            var actual = (ViewResult)controller.Delete(null);
+
+            // assert
+            Assert.AreEqual("Error", actual.ViewName);
+        }
+        [TestMethod]
+        public void DeletePostValid()
+        {
+            // act
+            var actual = (RedirectToRouteResult)controller.DeleteConfirmed(1);
+
+            // assert
+            Assert.AreEqual("Index", actual.RouteValues["action"]);
+        }
         
     }
 }
