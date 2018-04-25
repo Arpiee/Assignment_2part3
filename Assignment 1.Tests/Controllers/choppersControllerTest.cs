@@ -100,5 +100,61 @@ namespace Assignment_1.Tests.Controllers
             Assert.AreEqual("Error", actual.ViewName);
 
         }
+        // Get Edit
+        [TestMethod]
+        public void EditGetValidId()
+        {
+            // act
+            var actual = ((ViewResult)controller.Edit(1)).Model;
+
+            // assert
+            Assert.AreEqual(choppers[0], actual);
+        }
+        [TestMethod]
+        public void EditGetInvalidId()
+        {
+            // act
+            var actual = (ViewResult)controller.Edit(4);
+
+            // assert
+            Assert.AreEqual("Error", actual.ViewName);
+        }
+        [TestMethod]
+        public void EditGetNoId()
+        {
+            int? id = null;
+
+            // act
+            var actual = (ViewResult)controller.Edit(id);
+
+            // assert
+            Assert.AreEqual("Error", actual.ViewName);
+        }
+        // post: Edit
+        [TestMethod]
+        
+        public void EditPostValid()
+        {
+            // act
+            var actual = (RedirectToRouteResult)controller.Edit(choppers[0]);
+
+            // assert
+            Assert.AreEqual("Index", actual.RouteValues["action"]);
+
+        }
+        [TestMethod]
+        public void EditPostInvalid()
+        {
+            // arrange -  manually set model state to invalid
+            controller.ModelState.AddModelError("key", "update error");
+
+            // act
+            var actual = (ViewResult)controller.Edit(choppers[0]);
+
+            // assert
+            Assert.AreEqual("Edit", actual.ViewName);
+        }
+
+        
     }
 }
